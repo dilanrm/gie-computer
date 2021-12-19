@@ -1,0 +1,65 @@
+import React, { useState } from "react";
+import { TableProdCol } from "./TableProdCol.js.back";
+import { TableProdEdit } from "./EditProd.js";
+
+export const TableProd = ({ prod, editProd, user, getUser }) => {
+  const [isEdit, setIsEdit] = useState(false);
+
+  getUser();
+
+  const handleEdit = () => {
+    setIsEdit(!isEdit);
+    console.log(isEdit);
+  };
+
+  const handleSubmit = (id) => {
+    editProd(id);
+
+    handleEdit();
+  };
+
+  return (
+    <>
+      <h4>Products List</h4>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Price</th>
+              <th scope="col">Stock</th>
+              <th scope="col">Rating</th>
+              <th scope="col">View</th>
+              <th scope="col">UserID</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {isEdit
+              ? prod.map((prods, key) => {
+                  return (
+                    <TableProdEdit
+                      prods={prods}
+                      num={key}
+                      handleSubmit={handleSubmit}
+                      user={user}
+                    />
+                  );
+                })
+              : prod.map((prods, key) => {
+                  return (
+                    <TableProdCol
+                      prods={prods}
+                      num={key}
+                      handleEdit={handleEdit}
+                    />
+                  );
+                })}
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
+};

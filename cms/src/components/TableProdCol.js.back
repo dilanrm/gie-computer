@@ -1,0 +1,24 @@
+import React from "react";
+
+export const TableProdCol = ({ prods, num, handleEdit }) => {
+  return (
+    <tr>
+      <td>{num + 1}</td>
+      <td>{prods.name}</td>
+      <td>{prods.description}</td>
+      <td>{prods.price}</td>
+      <td>{prods.stock}</td>
+      <td>{prods.rating}</td>
+      <td>{prods.view}</td>
+      <td>{prods.user.name}</td>
+      <td>
+        <button className="btn btn-sm btn-danger" title="delete">
+          <i class="far fa-trash-alt"></i>
+        </button>
+        <button className="btn btn-sm btn-warning" title="edit" onClick={handleEdit}>
+          <i class="fas fa-edit"></i>
+        </button>
+      </td>
+    </tr>
+  );
+};
