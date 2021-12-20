@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import GoogleMap from "google-map-react";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Loading } from "../components/Loading";
+import { Map } from "../components/Map";
+// import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
 export const Contact = ({ loading }) => {
+  const render = (status) => {
+    return <h1>{status}</h1>;
+  };
+  const [clicks, setClicks] = useState([]);
+  const [zoom, setZoom] = useState(18); // initial zoom
+  const [center, setCenter] = useState({
+    lat: -6.816771655482246,
+    lng: 107.14793176137599,
+  });
+
   return (
     <>
       {loading === true ? (
@@ -85,6 +98,19 @@ export const Contact = ({ loading }) => {
                     </div>
                   </div>
                 </div>
+              </div>
+              <div style={{ height: "50vh", width: "100%" }}>
+                <GoogleMap
+                  apiKey={"AIzaSyBBrMsenYag_p7n2b3rJ_Smf-0jgTVZcCc"} // set if you need stats etc ...
+                  center={center}
+                  zoom={zoom}
+                >
+                  <Map
+                    lat={-6.816771655482246}
+                    lng={107.14793176137599}
+                    text={"A"} /* Kreyser Avrora */
+                  />
+                </GoogleMap>
               </div>
             </div>
           </section>

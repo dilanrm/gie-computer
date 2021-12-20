@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <header class="header shop">
       {/* <!-- Topbar --> */}
-      {/* <Topbar /> */}
+      <Topbar />
       {/* <!-- End Topbar --> */}
       <Middlebar />
       {/* <!-- Header Inner --> */}

@@ -3,24 +3,28 @@ import { Link } from "react-router-dom";
 
 export const Topbar = ({ Logout }) => {
   return (
-    <div class="topbar">
+    <div class="topbar" style={{padding: "3px"}}>
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-12 col-12">
+          {/* <div class="col-lg-4 col-md-12 col-12"> */}
             {/* <!-- Top Left --> */}
             <div class="top-left">
               <ul class="list-main">
                 <li>
-                  <i class="ti-headphone-alt"></i> +060 (800) 801-582
+                  Welcome to Gie Komputer
+                </li>
+                <li>-</li>
+                <li>
+                  <i class="ti-headphone-alt"></i> 0877-2010-0061
                 </li>
                 <li>
-                  <i class="ti-email"></i> support@shophub.com
+                  <i class="ti-email"></i> Buka Senin-Sabtu, 07:30-21:00 WIB
                 </li>
               </ul>
             </div>
             {/* <!--/ End Top Left --> */}
-          </div>
-          <div class="col-lg-8 col-md-12 col-12">
+          {/* </div> */}
+          {/* <div class="col-lg-8 col-md-12 col-12"> */}
             {/* <!-- Top Right --> */}
             {/* <div class="right-content">
               {JSON.parse(localStorage.getItem("user")).email === "" ? (
@@ -46,7 +50,7 @@ export const Topbar = ({ Logout }) => {
               )}
             </div> */}
             {/* <!-- End Top Right --> */}
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>
