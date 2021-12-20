@@ -10,28 +10,36 @@ export const NavMain = ({ Link }) => {
           <div className="row">
             <div class="col-lg-7 col-md-7 col-12">
               <ul class="nav main-menu menu navbar-nav">
-                <li class="active">
-                  {/* <Link to="/">Home</Link> */}
-                  <Logo Link={Link} />
-                </li>
                 <li>
                   <a href="#">
-                    Shop<i class="ti-angle-down"></i>
+                    <i
+                      class="ti-view-list-alt"
+                      style={{ fontSize: "36px" }}
+                    ></i>
                   </a>
                   <ul class="dropdown">
                     <li>
-                      <Link to="/shop">Shop Grid</Link>
+                      <Link to="/category/komponen-pc">Komponen PC</Link>
                     </li>
                     <li>
-                      <Link to="/cart">Cart</Link>
+                      <Link to="/category/notebook-accesories">Notebook & Accesories</Link>
                     </li>
                     <li>
-                      <Link to="/checkout">Checkout</Link>
+                      <Link to="/category/computer-accesories">Computer Accesories</Link>
+                    </li>
+                    <li>
+                      <Link to="/category/gaming-accesories">Gaming Accesories</Link>
+                    </li>
+                    <li>
+                      <Link to="/contact">
+                        Contact Us
+                      </Link>
                     </li>
                   </ul>
                 </li>
-                <li>
-                  <Link to="/contact">Contact Us</Link>
+                <li class="active">
+                  {/* <Link to="/">Home</Link> */}
+                  <Logo Link={Link} />
                 </li>
               </ul>
             </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
@@ -14,6 +15,9 @@ export const Footer = () => {
               </div>
               <div class="col-lg-6 col-12">
                 <div class="right">
+                  <p>
+                    <Link to="/contact" style={{textDecoration:"none"}}>Contact Us</Link>
+                  </p>
                 </div>
               </div>
             </div>
