@@ -13,12 +13,11 @@ export const Topbar = ({ Logout }) => {
                 <li>
                   Welcome to Gie Komputer
                 </li>
-                <li>-</li>
                 <li>
                   <i class="ti-headphone-alt"></i> 0877-2010-0061
                 </li>
                 <li>
-                  <i class="ti-email"></i> Buka Senin-Sabtu, 07:30-21:00 WIB
+                  <i class="ti-alarm-clock"></i> Buka Senin-Sabtu, 07:30-21:00 WIB
                 </li>
               </ul>
             </div>

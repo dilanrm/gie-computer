@@ -72,11 +72,6 @@ export const MobileNav = () => {
               </ul>
             </li>
             <li>
-              <a href="contact.html" role="menuitem" tabindex="0">
-                Contact Us
-              </a>
-            </li>
-            <li>
               <NavSearchForm />
             </li>
           </ul>

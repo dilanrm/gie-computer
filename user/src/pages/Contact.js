@@ -96,21 +96,21 @@ export const Contact = ({ loading }) => {
                         </div>
                       </form>
                     </div>
+                  <div style={{ height: "50vh", width: "100%" }}>
+                    <GoogleMap
+                      apiKey={"AIzaSyBBrMsenYag_p7n2b3rJ_Smf-0jgTVZcCc"} // set if you need stats etc ...
+                      center={center}
+                      zoom={zoom}
+                    >
+                      <Map
+                        lat={-6.816771655482246}
+                        lng={107.14793176137599}
+                        text={"A"} /* Kreyser Avrora */
+                      />
+                    </GoogleMap>
+                  </div>
                   </div>
                 </div>
-              </div>
-              <div style={{ height: "50vh", width: "100%" }}>
-                <GoogleMap
-                  apiKey={"AIzaSyBBrMsenYag_p7n2b3rJ_Smf-0jgTVZcCc"} // set if you need stats etc ...
-                  center={center}
-                  zoom={zoom}
-                >
-                  <Map
-                    lat={-6.816771655482246}
-                    lng={107.14793176137599}
-                    text={"A"} /* Kreyser Avrora */
-                  />
-                </GoogleMap>
               </div>
             </div>
           </section>
