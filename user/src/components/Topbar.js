@@ -3,29 +3,27 @@ import { Link } from "react-router-dom";
 
 export const Topbar = ({ Logout }) => {
   return (
-    <div class="topbar" style={{padding: "3px"}}>
+    <div class="topbar" style={{ padding: "3px", backgroundColor: "black" }}>
       <div class="container">
         <div class="row">
           {/* <div class="col-lg-4 col-md-12 col-12"> */}
-            {/* <!-- Top Left --> */}
-            <div class="top-left">
-              <ul class="list-main">
-                <li>
-                  Welcome to Gie Komputer
-                </li>
-                <li>
-                  <i class="ti-headphone-alt"></i> 0877-2010-0061
-                </li>
-                <li>
-                  <i class="ti-alarm-clock"></i> Buka Senin-Sabtu, 07:30-21:00 WIB
-                </li>
-              </ul>
-            </div>
-            {/* <!--/ End Top Left --> */}
+          {/* <!-- Top Left --> */}
+          <div class="top-left">
+            <ul class="list-main">
+              <li>Welcome to Gie Komputer</li>
+              <li>
+                <i class="ti-headphone-alt"></i> 0877-2010-0061
+              </li>
+              <li>
+                <i class="ti-alarm-clock"></i> Buka Senin-Sabtu, 07:30-21:00 WIB
+              </li>
+            </ul>
+          </div>
+          {/* <!--/ End Top Left --> */}
           {/* </div> */}
           {/* <div class="col-lg-8 col-md-12 col-12"> */}
-            {/* <!-- Top Right --> */}
-            {/* <div class="right-content">
+          {/* <!-- Top Right --> */}
+          {/* <div class="right-content">
               {JSON.parse(localStorage.getItem("user")).email === "" ? (
                 <ul class="list-main">
                 <li>
@@ -48,7 +46,7 @@ export const Topbar = ({ Logout }) => {
                 </ul>
               )}
             </div> */}
-            {/* <!-- End Top Right --> */}
+          {/* <!-- End Top Right --> */}
           {/* </div> */}
         </div>
       </div>

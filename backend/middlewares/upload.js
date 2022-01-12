@@ -5,7 +5,7 @@ module.exports.files = {
   storage: function (table) {
     let storage = multer.diskStorage({
       destination: function (req, file, cb) {
-        cb(null, "./static/publics/");
+        cb(null, "./static/images/");
       },
       filename: function (req, file, cb) {
         cb(null, Date.now() + "_" + table + "_" + file.originalname);

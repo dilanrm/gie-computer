@@ -1,10 +1,9 @@
-const { user, message } = require("../models");
+const { letter } = require("../models");
 
-class MessageController {
+class LetterController {
   static async getMsg(req, res) {
     try {
-      // console.log(req.userData)
-      const data = await message.findAll({
+      const data = await letter.findAll({
         include: [user],
         order: [["id", "ASC"]],
       });
@@ -15,18 +14,17 @@ class MessageController {
   }
 
   static async addMsg(req, res) {
-    // console.log(req.body, req.userData);
-    const { name, subject, email, phone, messages } = req.body;
+    const { nama, subject, email, phone, message } = req.body;
     const id = req.userData.id || 1;
     try {
       console.log("send");
 
-      const data = await message.create({
-        name,
+      const data = await letter.create({
+        nama,
         subject,
         email,
         phone,
-        message: messages,
+        message,
         userId: id,
       });
       res.status(200).json({ msg: "Success add", data: data });
@@ -41,7 +39,7 @@ class MessageController {
     } else {
       try {
         const id = +req.params.id;
-        const data = await message.destroy({ where: { id } });
+        const data = await letter.destroy({ where: { id } });
         res.status(200).json({ msg: `Success delete id ${id}` });
       } catch (e) {
         res.status(400).json({ msg: e });
@@ -50,4 +48,4 @@ class MessageController {
   }
 }
 
-module.exports = MessageController;
+module.exports = LetterController;

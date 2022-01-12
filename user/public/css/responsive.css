@@ -73,9 +73,9 @@ Version:1.0
 	height: 45px;
 }
 .header.shop .nice-select {
-	height: 44px;
+	height: 40px;
 	line-height: 44px;
-	font-size: 13px;
+	font-size: 8px;
 }
 .header.shop .nice-select .list li {
 	font-size: 13px;

@@ -2,7 +2,7 @@ import React from "react";
 import { NavSearchBar } from "./NavSearchBar";
 import { Logo } from "./Logo";
 
-export const NavMain = ({ Link }) => {
+export const NavMain = ({ Link, client }) => {
   return (
     <nav class="navbar navbar-expand-md ">
       <div class="navbar-collapse">
@@ -26,20 +26,20 @@ export const NavMain = ({ Link }) => {
                   </Link>
                   <ul class="dropdown">
                     <li>
-                      <Link to="/category/komponen-pc">Komponen PC</Link>
+                      <Link to="/search/komponen-pc">Komponen PC</Link>
                     </li>
                     <li>
-                      <Link to="/category/notebook-accesories">
+                      <Link to="/search/notebook-and-accesories">
                         Notebook & Accesories
                       </Link>
                     </li>
                     <li>
-                      <Link to="/category/computer-accesories">
+                      <Link to="/search/computer-accesories">
                         Computer Accesories
                       </Link>
                     </li>
                     <li>
-                      <Link to="/category/gaming-accesories">
+                      <Link to="/search/gaming-accesories">
                         Gaming Accesories
                       </Link>
                     </li>
@@ -56,7 +56,7 @@ export const NavMain = ({ Link }) => {
                 </li>
               </ul>
             </div>
-            <NavSearchBar />
+            <NavSearchBar client={client} />
           </div>
         </div>
       </div>

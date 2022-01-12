@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GoogleMap from "google-map-react";
 import { Breadcrumb } from "../components/Breadcrumb";
 import { Loading } from "../components/Loading";
@@ -15,6 +15,10 @@ export const Contact = ({ loading }) => {
     lat: -6.816771655482246,
     lng: 107.14793176137599,
   });
+
+  useEffect(() => {
+    document.title = "Kontak - Gie Komputer";
+  }, []);
 
   return (
     <>
@@ -96,19 +100,19 @@ export const Contact = ({ loading }) => {
                         </div>
                       </form>
                     </div>
-                  <div style={{ height: "50vh", width: "100%" }}>
-                    <GoogleMap
-                      apiKey={"AIzaSyBBrMsenYag_p7n2b3rJ_Smf-0jgTVZcCc"} // set if you need stats etc ...
-                      center={center}
-                      zoom={zoom}
-                    >
-                      <Map
-                        lat={-6.816771655482246}
-                        lng={107.14793176137599}
-                        text={"A"} /* Kreyser Avrora */
-                      />
-                    </GoogleMap>
-                  </div>
+                    <div style={{ height: "50vh", width: "100%" }}>
+                      <GoogleMap
+                        apiKey={"AIzaSyBBrMsenYag_p7n2b3rJ_Smf-0jgTVZcCc"} // set if you need stats etc ...
+                        center={center}
+                        zoom={zoom}
+                      >
+                        <Map
+                          lat={-6.816771655482246}
+                          lng={107.14793176137599}
+                          text={"A"} /* Kreyser Avrora */
+                        />
+                      </GoogleMap>
+                    </div>
                   </div>
                 </div>
               </div>

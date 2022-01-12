@@ -1,6 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-export const NavSearchBar = () => {
+export const NavSearchBar = ({ client }) => {
+  const [cat, setCat] = React.useState(null);
+  const [selectCat, setSelect] = React.useState("");
+  const [query, setQuery] = React.useState("");
+
+  const history = useNavigate();
+
+  const getCat = async () => {
+    const response = await client.get("/categories");
+    setCat(response.data);
+  };
+
+  const handleSubmit = (cate, q) => {
+    // e.preventDefault();
+    console.log(cate,q);
+    history(`/search/${cate}?query=${q}`);
+  };
+
+  React.useEffect(() => {
+    getCat();
+  }, []);
+
   return (
     <div class="col-lg-4 col-md-5 col-12">
       <div class="search-bar-top">
@@ -18,29 +40,47 @@ export const NavSearchBar = () => {
         </div> */}
 
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Search" />
-          <div class="nice-select" tabindex="0" style={{backgroundColor: "white", fontSize:"8pt"}}>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Search"
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <div
+            class="nice-select"
+            tabindex="0"
+            style={{ backgroundColor: "white" }}
+          >
             <span class="current">All Category</span>
-            <ul class="list" style={{zIndex:"9999"}}>
-              <li data-value="All Category" class="option selected focus">
+            <ul class="list" style={{ zIndex: "9999" }}>
+              <li
+                data-value="All Category"
+                class="option selected focus"
+                onClick={(e) => setSelect("")}
+              >
                 All Category
               </li>
-              <li data-value="Komponen PC" class="option">
-                Komponen PC
-              </li>
-              <li data-value="Notebook & Accesories" class="option">
-                Notebook & Accesories
-              </li>
-              <li data-value="Computer Accesories" class="option">
-                Computer Accesories
-              </li>
-              <li data-value="Gaming Accesories" class="option">
-                Gaming Accesories
-              </li>
+              {!cat
+                ? null
+                : cat.map((c, k) => {
+                    return (
+                      <li
+                        data-value={c.nama}
+                        class="option"
+                        onClick={(e) => setSelect(c.slug)}
+                      >
+                        {c.nama}
+                      </li>
+                    );
+                  })}
             </ul>
           </div>
           <div class="input-group-append">
-            <button class="btn" type="submit">
+            <button
+              class="btn"
+              type="submit"
+              onClick={()=>handleSubmit(selectCat, query)}
+            >
               <i class="ti-search"></i>
             </button>
           </div>

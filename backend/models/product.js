@@ -1,6 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
-const { slugify } = require("../helpers/slugs");
+const slugify = require("../helpers/slugs");
 module.exports = (sequelize, DataTypes) => {
   class product extends Model {
     /**
@@ -12,12 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       product.hasMany(models.product_image);
       product.hasMany(models.product_link);
-      product.belongsTo(models.brand, {
-        foreignKey: "brandId",
-      });
-      product.belongsTo(models.category, {
-        foreignKey: "categoryId",
-      });
+      product.belongsTo(models.brand);
+      product.belongsTo(models.category);
     }
   }
   product.init(
@@ -30,11 +26,27 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
+      deskripsi: {
+        type: DataTypes.TEXT,
+        validate: {
+          notEmpty: {
+            message: "Desc can't be empty!'",
+          },
+        },
+      },
       harga: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         validate: {
           notEmpty: {
             message: "harga can't be empty!'",
+          },
+        },
+      },
+      stock: {
+        type: DataTypes.INTEGER,
+        validate: {
+          notEmpty: {
+            message: "stock can't be empty!'",
           },
         },
       },
@@ -73,8 +85,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       hooks: {
-        beforeCreate: function (brand, options) {
-          product.nama = slugify(product.nama);
+        beforeCreate: function (product, options) {
+          product.slug = slugify(product.nama);
+        },
+        beforeUpdate: function (product, options) {
+          product.slug = slugify(product.nama);
         },
       },
       sequelize,

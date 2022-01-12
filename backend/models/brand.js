@@ -1,6 +1,6 @@
 "use strict";
 const { Model } = require("sequelize");
-const { slugify } = require("../helpers/slugs");
+const slugify = require("../helpers/slugs");
 module.exports = (sequelize, DataTypes) => {
   class brand extends Model {
     /**
@@ -38,7 +38,10 @@ module.exports = (sequelize, DataTypes) => {
     {
       hooks: {
         beforeCreate: function (brand, options) {
-          brand.nama = slugify(brand.nama);
+          brand.slug = slugify(brand.nama);
+        },
+        beforeUpdate: function (brand, options) {
+          brand.slug = slugify(brand.nama);
         },
       },
       sequelize,

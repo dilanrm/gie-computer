@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       size: {
-        type: Sequelize.NUMBER
+        type: Sequelize.NUMERIC
       },
       productId: {
         type: Sequelize.INTEGER

@@ -11,11 +11,17 @@ module.exports = {
       nama: {
         type: Sequelize.STRING
       },
+      deskripsi: {
+        type: Sequelize.TEXT
+      },
       harga: {
-        type: Sequelize.NUMBER
+        type: Sequelize.INTEGER
+      },
+      stock: {
+        type: Sequelize.INTEGER
       },
       berat: {
-        type: Sequelize.NUMBER
+        type: Sequelize.NUMERIC
       },
       brandId: {
         type: Sequelize.INTEGER
