@@ -5,23 +5,26 @@ import { Slider } from "../components/Home/Slider";
 import { Loading } from "../components/Loading";
 
 export const Home = ({ loading }) => {
+  React.useEffect(() => {
+    document.title = "Home - Gie Komputer";
+  });
   return (
     <>
-    {loading === true ? (
+      {loading === true ? (
         <Loading />
       ) : (
-      <div>
-        <Slider />
-        {/* <!--/ End Slider Area --> */}
+        <div>
+          <Slider />
+          {/* <!--/ End Slider Area --> */}
 
-        {/* <!-- Start Small Banner  --> */}
-        <Banner />
-        {/* <!-- End Small Banner --> */}
+          {/* <!-- Start Small Banner  --> */}
+          <Banner />
+          {/* <!-- End Small Banner --> */}
 
-        {/* <!-- Start Shop Newsletter  --> */}
-        <Newsletter />
-        {/* <!-- End Shop Newsletter --> */}
-      </div>
+          {/* <!-- Start Shop Newsletter  --> */}
+          <Newsletter />
+          {/* <!-- End Shop Newsletter --> */}
+        </div>
       )}
     </>
   );

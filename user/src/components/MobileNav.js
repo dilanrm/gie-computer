@@ -1,7 +1,7 @@
 import React from "react";
 import { NavSearchForm } from "./NavSearchForm";
 
-export const MobileNav = () => {
+export const MobileNav = ({ client }) => {
   return (
     <div class="mobile-nav">
       <div class="slicknav_menu">
@@ -72,12 +72,7 @@ export const MobileNav = () => {
               </ul>
             </li>
             <li>
-              <a href="contact.html" role="menuitem" tabindex="0">
-                Contact Us
-              </a>
-            </li>
-            <li>
-              <NavSearchForm />
+              <NavSearchForm client={client} />
             </li>
           </ul>
         </div>

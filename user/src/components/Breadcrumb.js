@@ -3,7 +3,9 @@ import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 
 export const Breadcrumb = () => {
-  const currRoute = useLocation().pathname;
+  let currRoute = useLocation().pathname.toLowerCase();
+  currRoute = currRoute.split("/");
+  let locat = "/";
   return (
     <div class="breadcrumbs">
       <div class="container">
@@ -12,13 +14,22 @@ export const Breadcrumb = () => {
             <div class="bread-inner">
               <ul class="bread-list">
                 <li>
-                  <Link to="/">
-                    Home<i class="ti-arrow-right"></i>
-                  </Link>
+                  <Link to="/">Home</Link>
                 </li>
-                <li class="active">
-                  <Link to={currRoute}>{currRoute.replace("/","")}</Link>
-                </li>
+                {currRoute.map((rute, key) => {
+                  console.log(locat);
+                  if (rute !== "") {
+                    locat += rute + "/";
+                    return (
+                      <li className="active">
+                        <i class="ti-arrow-right"></i>
+                        <Link to={locat}>
+                          {rute.replace("-", " ")}
+                        </Link>
+                      </li>
+                    );
+                  }
+                })}
               </ul>
             </div>
           </div>

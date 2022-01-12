@@ -2,48 +2,61 @@ import React from "react";
 import { NavSearchBar } from "./NavSearchBar";
 import { Logo } from "./Logo";
 
-export const NavMain = ({ Link }) => {
+export const NavMain = ({ Link, client }) => {
   return (
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-md ">
       <div class="navbar-collapse">
         <div class="nav-inner">
           <div className="row">
             <div class="col-lg-7 col-md-7 col-12">
-              <ul class="nav main-menu menu navbar-nav">
-                <li>
-                  <a href="#">
-                    <i
-                      class="ti-view-list-alt"
-                      style={{ fontSize: "36px" }}
-                    ></i>
-                  </a>
+              <ul
+                class="nav main-menu menu navbar-nav"
+                style={{
+                  height: "70ox",
+                }}
+              >
+                <li
+                  style={{
+                    width: "60px",
+                    height: "60px",
+                  }}
+                >
+                  <Link to="#">
+                    <i class="ti-menu-alt" style={{ fontSize: "20px" }}></i>
+                  </Link>
                   <ul class="dropdown">
                     <li>
-                      <Link to="/category/komponen-pc">Komponen PC</Link>
+                      <Link to="/search/komponen-pc">Komponen PC</Link>
                     </li>
                     <li>
-                      <Link to="/category/notebook-accesories">Notebook & Accesories</Link>
+                      <Link to="/search/notebook-and-accesories">
+                        Notebook & Accesories
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/category/computer-accesories">Computer Accesories</Link>
+                      <Link to="/search/computer-accesories">
+                        Computer Accesories
+                      </Link>
                     </li>
                     <li>
-                      <Link to="/category/gaming-accesories">Gaming Accesories</Link>
+                      <Link to="/search/gaming-accesories">
+                        Gaming Accesories
+                      </Link>
                     </li>
-                    <li>
+                    {/* <li>
                       <Link to="/contact">
                         Contact Us
                       </Link>
-                    </li>
+                    </li>  */}
                   </ul>
                 </li>
                 <li class="active">
-                  {/* <Link to="/">Home</Link> */}
+                  {/* <Link to="/">Home</Link>  */}
                   <Logo Link={Link} />
                 </li>
               </ul>
             </div>
-            <NavSearchBar />
+            <NavSearchBar client={client} />
           </div>
         </div>
       </div>

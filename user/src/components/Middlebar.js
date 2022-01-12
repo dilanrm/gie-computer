@@ -6,7 +6,7 @@ import { NavSearchBar } from "./NavSearchBar";
 import { NavSearchForm } from "./NavSearchForm";
 // import { ShoppingMenu } from "./ShoppingMenu";
 
-export const Middlebar = () => {
+export const Middlebar = ({ client }) => {
   return (
     <div class="middle-inner" style={{ padding: "10px 0px" }}>
       <div class="container">
@@ -20,7 +20,7 @@ export const Middlebar = () => {
             {/* <!-- Search Form --> */}
             {/* <NavSearchForm /> */}
             {/* <!--/ End Search Form --> */}
-            <MobileNav />
+            <MobileNav client={client} />
           </div>
           {/* <NavSearchBar /> */}
           {/* <ShoppingMenu /> */}

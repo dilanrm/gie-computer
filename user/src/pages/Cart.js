@@ -3,7 +3,7 @@ import { Breadcrumb } from "../components/Breadcrumb";
 import { CartTable } from "../components/Cart/CartTable";
 import { CartTotal } from "../components/Cart/CartTotal";
 import { Loading } from "../components/Loading";
-
+ 
 export const Cart = ({ loading }) => {
   return (
     <>

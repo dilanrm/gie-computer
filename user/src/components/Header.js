@@ -4,15 +4,15 @@ import { Topbar } from "./Topbar";
 import { Middlebar } from "./Middlebar";
 import { Navbar } from "./Navbar";
 
-export const Header = () => {
+export const Header = ({ client }) => {
   return (
     <header class="header shop">
       {/* <!-- Topbar --> */}
       <Topbar />
       {/* <!-- End Topbar --> */}
-      <Middlebar />
+      <Middlebar client={client} />
       {/* <!-- Header Inner --> */}
-      <Navbar />
+      <Navbar client={client} />
       {/* <!--/ End Header Inner --> */}
     </header>
   );

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { NavMain } from "./NavMain";
 
-export const Navbar = () => {
+export const Navbar = ({client}) => {
   return (
     <div class="header-inner">
       <div class="container">
@@ -12,7 +12,7 @@ export const Navbar = () => {
             <div class="col-lg-9 col-12">
               <div class="menu-area">
                 {/* <!-- Main Menu --> */}
-                <NavMain Link={Link} />
+                <NavMain Link={Link} client={client} />
                 {/* <!--/ End Main Menu -->	 */}
               </div>
             </div>
