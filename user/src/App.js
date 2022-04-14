@@ -29,9 +29,11 @@ import { ProdukAdd } from "./pages/ProdukAdd";
 import { ProdukEdit } from "./pages/ProdukEdit";
 import { ProdukImg } from "./pages/ProdukImg";
 
-const base_url = "http://localhost:3000/static/images/";
+// const base_url = "http://localhost:3000/static/images/";
+const base_url = "https://giekomp.dilanrm.my.id/static/images/";
 const client = axios.create({
-  baseURL: "http://localhost:3000",
+//   baseURL: "http://localhost:3000",
+    baseURL: "https://giekomp.dilanrm.my.id"
 });
 
 if (!JSON.parse(localStorage.getItem("user"))) {
